@@ -1,0 +1,48 @@
+.container{
+    position: relative;
+     margin: auto;
+    margin-top: 50%;
+    max-width: fit-content;
+    height: 100px;
+    width: 30px;
+}
+
+.current-freq{
+    text-align: center;
+}
+.line{
+    width: 5px;
+    height: 200px;
+    background-color: black;
+   bottom: 0;
+   left: 0;
+    position: absolute;
+    transition: 0.5s;
+    transform:rotate(-82deg);
+    transform-origin: bottom;
+}
+
+
+.container::after{
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    width: 400px;
+    height: 5px;
+    background-color: red;
+    transform:translate(-50%);
+}
+
+.note{
+   text-align: center;
+   
+}
+
+.input{
+    text-align: center;
+}
+
+.numbers{
+    text-align: center;
+}
