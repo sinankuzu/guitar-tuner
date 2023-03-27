@@ -10,34 +10,40 @@ let g3 = 196;
 let b3 = 246.94;
 let e4 = 329.63;
 
-// freqNeedle.style.transform = `rotate(0deg)`;
+
+ freqNeedle.style.transform = `rotate(0deg)`;
 
 
 
 
 const init = () =>{
+    
     currentFreq = document.querySelector(".current-freq").value;
     numbers.innerHTML = currentFreq;
-    console.log(currentFreq, "21");
-    if(soundFreq >= 64 && soundFreq <= 345){
-        currentFreq.innerHTML = `${soundFreq}`;
-        if(true){
+    if(currentFreq >= 0 && currentFreq <= 9999){
+        
+        currentFreq.innerHTML = soundFreq;
+        if (currentFreq < 100 ) {
             note.innerHTML = "E";
             let goal = e2;
-            let needleDeg = soundFreq - goal;
-            console.log('burda')
-            console.log(needleDeg)
+            let needleDeg = (currentFreq - goal) * 5;
+            console.log('needleDeg', needleDeg)
+             freqNeedle.style.transform = `rotate(${needleDeg}deg )`; 
         }     
-        else if (soundFreq > 100) {
+        else if(currentFreq >= 100 && currentFreq <= 130){
             note.innerHTML = "A";
             let goal = a2;
-            let needleDeg = soundFreq - goal;
+            let needleDeg = (currentFreq - goal) * 5;
+            console.log("needleDeg", needleDeg);
+            freqNeedle.style.transform = `rotate(${needleDeg}deg )`; 
         }
-        freqNeedle.style.transform = `rotate(${needleDeg * 5}deg )`;
+    
+       
         console.log('cikis')
     }
     
 }
+setTimeout(init, 4000);
 // document.addEventListener("keydown", (e) => {
     
 //     if(soundFreq < 64) return;
